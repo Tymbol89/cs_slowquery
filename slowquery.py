@@ -20,15 +20,27 @@ import sys
 
 
 ## SUDOPASS = getpass.getpass("What is your password:  ")
+
+#### Get user and the slow file
 WHOAMI = os.getlogin()
 
 MYSQLSLOW = 'mysql-slow.log'
 
+#### If argv has more than 1 arguments set the variable, else end script
 if len(sys.argv)>1:
 	DATABASE = sys.argv[1]
-	print(DATABASE)
+	DBSLOW = DATABASE + "_slow.log"
+	#print(DATABASE)
 else:
 	print('Please include your database')
 	sys.exit()
 
-print('lets see if we get here')
+
+#PATH Look for the database
+
+
+SUDOPASS = getpass.getpass(WHOAMI + "'s Password: ")
+
+
+##print(DATABASE + " will be saved as " + DBSLOW)
+##print('lets see if we get here')
